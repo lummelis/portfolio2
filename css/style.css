@@ -39,6 +39,22 @@ h1 {
   font-size: 3em;
 }
 
+/* BUTTONS */
+.button {
+  display: inline-block;
+  border-radius: 1em;
+  padding: 1em 2em;
+  margin: 1em;
+  border: 1px solid #333;
+  color: #333;
+  transition: all .4s ease-out;
+}
+
+.button:hover{
+  background: #333;
+  color: #fff;
+}
+
 /* HELPER CLASSES */
 .text-centered {
   text-align: center;
@@ -70,6 +86,32 @@ h1 {
 
 .site-header h1 a:hover {
   color: rgba(0, 0, 0, 1);
+}
+
+.page-home .site-header{
+  animation-name: headeranimation;
+  animation-duration: 1s;
+  animation-delay: .75s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes headeranimation{
+  0%{transform: translateY(-20px);opacity: 0;}
+  100%{transform: translateY(0px);opacity: 1;}
+}
+
+.page-home .site-footer{
+  animation-name: footeranimation;
+  animation-duration: 1s;
+  animation-delay: 1.25s;
+  animation-fill-mode: forwards;
+  opacity: 0
+}
+
+@keyframes footeranimation{
+  0%{transform: translateY(20px);opacity: 0;}
+  100%{transform: translateY(0px);opacity: 1;}
 }
 
 .site-navigation ul {
@@ -125,6 +167,27 @@ img {
   overflow: hidden;
 }
 
+.page-work .thumb-grid li{
+animation-name: thumbgridgrow;
+animation-duration: 2s;
+opacity: 0;
+animation-fill-mode: forwards;
+}
+
+.page-work .thumbgrid li:nth-child(1) { animation-delay: 0; }
+.page-work .thumbgrid li:nth-child(2) { animation-delay: .2s; }
+.page-work .thumbgrid li:nth-child(3) { animation-delay: .4s; }
+.page-work .thumbgrid li:nth-child(4) { animation-delay: .6s; }
+.page-work .thumbgrid li:nth-child(5) { animation-delay: .8s; }
+.page-work .thumbgrid li:nth-child(6) { animation-delay: 1s; }
+.page-work .thumbgrid li:nth-child(7) { animation-delay: 1.2s; }
+.page-work .thumbgrid li:nth-child(8) { animation-delay: 1.4s; }
+
+@keyframes thumbgridgrow{
+  0%{transform: translateY(20px);opacity: 0;}
+  100%{transform: translateY(0px);opacity: 1;}
+}
+
 @media (min-width: 768px) {
   .thumbgrid li {
     width: 24.5%;
@@ -136,6 +199,7 @@ img {
   transition: 0.2s ease-out all;
   width: 100%;
   margin: 0;
+  position: relative;
 }
 
 .thumbgrid li a:hover  {
@@ -163,10 +227,42 @@ img {
   display: block;
 }
 
+/* Sections */
+.hero {
+  padding: 6em 1em;
+  text-align: center;
+}
+
+.hero, .hero * {
+  animation-name: heroanimation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.hero h1 {
+  max-width: 13em;
+  margin: 0 auto 1em auto;
+}
+
+.hero p {
+  margin: 0 auto 1em auto;
+}
+
+.hero h1 { animation-delay: 0; }
+.hero p { animation-delay: .25s; }
+.hero a { animation-delay: .5s; }
+
+
 
 /* @Keyframe Animations */
 
-@keyframes fade-in-and-down {
+@keyframes heroanimation {
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+
+/* @keyframes fade-in-and-down {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -209,4 +305,5 @@ img {
 }
 .fade-in-and-down *:nth-child(8) {
   animation-delay: 1.6s;
-}
+} */
+
