@@ -59,6 +59,10 @@ h1 {
 .text-centered {
   text-align: center;
 }
+.container {
+max-width: 1000px;
+margin: 0 auto;
+}
 
 /* STRUCTURE */
 
@@ -307,3 +311,87 @@ animation-fill-mode: forwards;
   animation-delay: 1.6s;
 } */
 
+
+/* PROJECT DETAIL PAGES */
+
+section {
+  padding: 10% 2em;
+}
+
+.dark {
+  background: #ffffff;
+  color: #333333;
+}
+
+.page-projectdetail {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-projectdetail .hero {
+  background: #dedede;
+}
+
+.projectinfo {
+  text-align: center;
+}
+
+.headline {
+  font-size: 3em;
+}
+
+.subheadline {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+  color: rgba(0,0,0,.5);
+  font-weight: 40normal0;
+}
+
+.projectinfo p {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subcontent-text {
+  padding: 2em;
+}
+
+.subcontent-text h3 {
+  font-size: 1.75em;
+}
+
+@media (min-width: 768px){
+
+  .projectinfo p {
+    columns: 2;
+  }
+
+  .two-col .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .two-col .subcontent-image,
+  .two-col .subcontent-text {
+    width: 50%;
+  }
+
+  .col-imagesmaller .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .col-imagesmaller .subcontent-image {
+    width: 33.3333%;
+  }
+
+  .col-imagesmaller .subcontent-text {
+    width: 66.6666%;
+  }
+
+  .flippit .container {
+    flex-direction: row-reverse;
+  }
+}
